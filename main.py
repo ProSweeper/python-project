@@ -1,6 +1,5 @@
 import random
 import os
-from syslog import LOG_CRIT
 SUITS = ("HEARTS", "SPADES", "CLUBS", "DIAMONDS")
 SYMBOLS = ('♥', '♠', '♣', '♦')
 
