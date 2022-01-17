@@ -46,8 +46,11 @@ def show_cards(cards):
             table[1] += f'|## |'
             table[2] += f'|###|'
             table[3] += f'|_##|'
-
-        if card != 'back':
+        elif card[0] == 10:
+            table[1] += f'|{card[0]} |'
+            table[2] += f'| {card[1]} |'
+            table[3] += f'|_{card[0]}|'
+        elif card != 'back':
             table[1] += f'|{card[0]}  |'
             table[2] += f'| {card[1]} |'
             table[3] += f'|__{card[0]}|'
@@ -112,11 +115,12 @@ def dealer_turn(dealer_hand):
     elif hand_value(dealer_hand) < 17:
         print('The dealer draws a card')
         dealer_hand.append(deck.pop())
+        turn = input("Press enter to continue")
     elif hand_value(dealer_hand) >= 17:
         print("The dealer stands")
         dealer_turn = False
 
-
+clear()
 bank = 3000 # starting money amount
 while True:    
     clear()
